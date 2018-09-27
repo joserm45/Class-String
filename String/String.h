@@ -9,12 +9,23 @@ class string
 
 public:
 
-	TYPE word;
-	string(TYPE* word): word(word) {}
+	TYPE string;
 
+	string(TYPE*word)
+	{
+		uint i = 0;
+		while (word[i] != 0 && word[i] != '\0')
+		{
+			string[i] = word[i];
+			i++;
+		}
+	}
+	//string(TYPE* word): word(word) {}
+
+	
 	~string(){}
 
-	string operator = (string word)
+	string operator =(string word)
 	{
 		
 		for (int i = 0; word[i] != '/0'; i++)

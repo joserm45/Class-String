@@ -4,38 +4,53 @@
 
 
 template <class TYPE>
-class string
+class String
 {
 
 public:
 
-	TYPE string;
-
-	string(TYPE*word)
+	
+	String(uint size)
 	{
+		String string = new String[size];
+	}
+	
+	~String(){}
+
+	String operator =(const char* word)
+	{		
 		uint i = 0;
-		while (word[i] != 0 && word[i] != '\0')
+		while (word[i] != NULL && word[i] != '\0')
 		{
 			string[i] = word[i];
 			i++;
 		}
 	}
-	//string(TYPE* word): word(word) {}
 
-	
-	~string(){}
-
-	string operator =(string word)
+	bool operator ==(const char* word)
 	{
-		
-		for (int i = 0; word[i] != '/0'; i++)
-		{
 
+		uint i = 0;
+		while (word[i] != NULL && word[i] != '\0')
+		{
+			if ('world[i]' != 'string[i]')
+				return false;
+			i++;
 		}
-			
-		word = 
+		return true;
 	}
 
+	bool operator !=(string word)
+	{
+		uint i = 0;
+		while (word[i] != NULL && word[i] != '\0')
+		{
+			if ('world[i]' == 'string[i]')
+				return false;
+			i++;
+		}
+		return true;
+	}
 };
 
 

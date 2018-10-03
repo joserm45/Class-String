@@ -67,11 +67,29 @@ public:
 	String operator =(const char* word)
 	{		
 		unsigned int i = 0;
-		while (word[i] != NULL && word[i] != '\0')
+		if (word != NULL)
 		{
-			string[i] = word[i];
-			i++;
+			
+			delete[]this->string;
+
+			if (strlen(string) > size_memory)
+			{
+
+			}
+			else
+			{
+
+			}
+			size_memory = strlen(string) + 1;
+			this->string = new char[size_memory];
+			while (word[i] != NULL && word[i] != '\0')
+			{
+				string[i] = word[i];
+				i++;
+			}
 		}
+		
+		return *this;
 	}
 
 	bool operator ==(const char* word)
@@ -85,6 +103,11 @@ public:
 			i++;
 		}
 		return true;
+	}
+
+	const char GetString()
+	{
+		this->string
 	}
 
 	/*bool operator !=(String word)
